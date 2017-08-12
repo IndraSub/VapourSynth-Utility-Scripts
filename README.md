@@ -6,7 +6,9 @@ Video Processing Utility Scripts for VapourSynth
 
 ### logoNR port for VapourSynth
 
-Post-denoise and artifacts clean filter of EraseLogo.
+[logonr_vs.py](https://github.com/IndraSub/VapourSynth-Utility-Scripts/blob/master/logonr_vs.py)
+
+Post-denoise and artifacts clean filter for EraseLogo.
 
 Must be used after EraseLogo process by the [DeLogo filter](https://github.com/HomeOfVapourSynthEvolution/VapourSynth-DeLogo).
 
