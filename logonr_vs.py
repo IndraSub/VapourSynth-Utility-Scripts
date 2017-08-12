@@ -38,7 +38,7 @@
 ###    dlg = core.delogo.EraseLogo(src, "logofile.lgd")
 ###    logonr.logoNR(core, dlg, src, True, 1280, 40, -40, -960)
 ###
-### vscore [instance]
+### core [instance]
 ### ------------------
 ###    The VapourSynth core instance created by vs.get_core(), must be the instance which loaded the FFT3DFilter filter.
 ###
@@ -171,7 +171,7 @@ def logoNR(core, dlg, src, chroma=True, l=0, t=0, r=0, b=0, nr=None, GPU=False):
         # clp_nr = FFT3DGPU(last, sigma=4, plane=4 if chroma else 0) # Waiting for VapourSynth port of FFT3DGPU.
     else:
         clp_nr = core.fft3dfilter.FFT3DFilter(last, sigma=4, plane=4 if chroma else 0)
-    # VapourSynth's Expr function doesn't provide a parameter to control which plane to process, so we simply process them all.
+    # VapourSynth's Expr function doesn't provide a parameter to control which plane to process, so we simply process all planes.
     logoM = core.std.Expr(clips=[last, src], expr="x y - abs 16 *")\
                 .std.Maximum(planes=[0,1,2] if chroma else [0], coordinates=[0, 1, 0, 1, 1, 0, 1, 0])\
                 .std.Convolution(matrix=[1, 1, 1, 1, 0, 1, 1, 1, 1], planes=[0,1,2] if chroma else [0])\
