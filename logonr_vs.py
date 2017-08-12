@@ -22,14 +22,13 @@
 ### The "GPU" parameter is removed since there is no replace for FFT3DGPU filter in VapourSynth right now.
 ### The "nr" parameter's format has changed, read the usage info below if you want to use it.
 ### This script has NOT properly tested, use at your own risk.
-### Issue reports and pull requests are highly welcomed.
 ###
 ###
 ### +---------+
 ### |  USAGE  |
 ### +---------+
 ###
-### logoNR(vscore, dlg, src, chroma, l, t, r, b, nr)
+### logoNR(core, dlg, src, chroma, l, t, r, b, nr)
 ###
 ### Example script clip:
 ### ------------------
